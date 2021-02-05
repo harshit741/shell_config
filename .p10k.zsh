@@ -88,7 +88,7 @@
     vim_shell               # vim shell indicator (:sh)
     midnight_commander      # midnight commander shell (https://midnight-commander.org/)
     nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
-    vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
+    # vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
     # vpn_ip                # virtual private network indicator
     load                  # CPU load
     # disk_usage            # disk usage
@@ -100,8 +100,8 @@
     time                    # current time
     # =========================[ Line #2 ]=========================
     newline
-    # ip                    # ip address and bandwidth usage for a specified network interface
-    public_ip             # public IP address
+    ip                    # ip address and bandwidth usage for a specified network interface
+    # public_ip             # public IP address
     # proxy                 # system-wide http/https/ftp proxy
     battery               # internal battery
     wifi                  # wifi speed
@@ -208,9 +208,9 @@
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=5
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND=31
   # Default current directory foreground color.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=254
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=231
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
@@ -905,7 +905,7 @@
 
   # Don't show context unless running with privileges or in SSH.
   # Tip: Remove the next line to always show context.
-  typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_{CONTENT,VISUAL_IDENTIFIER}_EXPANSION=
+  # typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_{CONTENT,VISUAL_IDENTIFIER}_EXPANSION=
 
   # Custom icon.
   # typeset -g POWERLEVEL9K_CONTEXT_VISUAL_IDENTIFIER_EXPANSION='⭐'
@@ -1529,7 +1529,7 @@
 
   ###########[ ip: ip address and bandwidth usage for a specified network interface ]###########
   # IP color.
-  typeset -g POWERLEVEL9K_IP_BACKGROUND=4
+  typeset -g POWERLEVEL9K_IP_BACKGROUND=5
   typeset -g POWERLEVEL9K_IP_FOREGROUND=0
   # The following parameters are accessible within the expansion:
   #
@@ -1541,7 +1541,7 @@
   #   P9K_IP_TX_BYTES   | total number of bytes sent
   #   P9K_IP_RX_RATE    | receive rate (since last prompt)
   #   P9K_IP_TX_RATE    | send rate (since last prompt)
-  typeset -g POWERLEVEL9K_IP_CONTENT_EXPANSION='${P9K_IP_RX_RATE:+⇣$P9K_IP_RX_RATE }${P9K_IP_TX_RATE:+⇡$P9K_IP_TX_RATE }$P9K_IP_IP'
+  typeset -g POWERLEVEL9K_IP_CONTENT_EXPANSION='$P9K_IP_IP'
   # Show information for the first network interface whose name matches this regular expression.
   # Run `ifconfig` or `ip -4 a show` to see the names of all network interfaces.
   typeset -g POWERLEVEL9K_IP_INTERFACE='[ew].*'
